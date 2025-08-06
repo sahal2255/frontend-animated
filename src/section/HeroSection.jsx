@@ -1,4 +1,29 @@
+import {useGSAP} from '@gsap/react'
+import gsap from 'gsap';
+import  SplitText  from 'gsap/SplitText';
+gsap.registerPlugin(SplitText);
+
 const HeroSection = () => {
+useGSAP(()=>{
+  const titleSplit=SplitText.create(".hero-heading",{
+    type:'chars',
+  });
+  const tl=gsap.timeline({
+    delay:1,
+  })
+  tl.to(".hero-content",{
+    opacity:1,
+    y:0,
+    easel:"power1.inOut"
+  })
+  tl.from(titleSplit.chars, {
+  opacity: 0,
+  y: 50,
+  stagger: 0.05,
+  ease: "power2.out",
+});
+})
+  
   return (
     <section className="relative bg-main-bg h-[100vh] m overflow-hidden">
       <div className="hero-container relative w-full h-full flex items-center justify-center">
@@ -16,7 +41,7 @@ const HeroSection = () => {
             </h1>
           </div>
           <div className="hero-text-scroll"
-            // style={{clipPath:"polygon(50% 0%, 50% 0, 50% 100%, 50% 100%)"}}
+            style={{clipPath:"polygon(50% 0%, 50% 0, 50% 100%, 50% 100%)"}}
           >
             <div className="p-4">
               <h1>Focus + Fury</h1>

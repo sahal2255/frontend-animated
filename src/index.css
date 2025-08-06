@@ -10,9 +10,13 @@ main{
  
   color: rgb(255, 211, 0)	;
 }
+.hero-content{
+  opacity: 0;
+  /* transform: translateY(50px); */
+}
 .hero-text-scroll{
   background-color: rgb(253, 253, 253);
-   padding: 1rem 2rem;
+  padding: 1rem 2rem;
   margin-top: 1rem;
   border: 5px solid #FFD300;
   transform: skewY(-5deg);
