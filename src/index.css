@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@600&display=swap');
+
+main{
+    background-color: rgb(27, 53, 139);
+}
+
+.hero-heading {
+ 
+  color: rgb(255, 211, 0)	;
+}
+.hero-text-scroll{
+  background-color: rgb(253, 253, 253);
+   padding: 1rem 2rem;
+  margin-top: 1rem;
+  border: 5px solid #FFD300;
+  transform: skewY(-5deg);
+}
+.hero-text-scroll h1 {
+  font-size: 35px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: #E21B4D;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+.hero-button{
+  background-color: #FFD300;
+  color: #E21B4D;
+  border-radius: 10px;
+  width: 200px;
+  border: 3px solid white;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* justify-content: center; */
+}
+
