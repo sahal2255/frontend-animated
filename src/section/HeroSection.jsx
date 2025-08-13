@@ -1,29 +1,58 @@
-import {useGSAP} from '@gsap/react'
-import gsap from 'gsap';
-import  SplitText  from 'gsap/SplitText';
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import SplitText from "gsap/SplitText";
 gsap.registerPlugin(SplitText);
 
 const HeroSection = () => {
-useGSAP(()=>{
-  const titleSplit=SplitText.create(".hero-heading",{
-    type:'chars',
+  useGSAP(() => {
+    const titleSplit = SplitText.create(".hero-heading", {
+      type: "chars",
+    });
+    const tl = gsap.timeline({
+      delay: 1,
+    });
+    tl.to(".hero-content", {
+      opacity: 1,
+      y: 0,
+      easel: "power1.inOut",
+    })
+      .to(
+        ".hero-text-scroll",
+        {
+          duration: 1,
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          ease: "circ.out",
+        },
+        "-=0.5"
+      )
+      .from(
+        titleSplit.chars,
+        {
+          opacity: 0,
+          yPercent: 200,
+          stagger: 0.05,
+          ease: "power2.out",
+        },
+        "-=0.5"
+      );
+
+      const heroTl=gsap.timeline({
+        scrollTrigger:{
+          trigger:".hero-container",
+          start:"1% top",
+          end:"bottom top",
+          scrub:true,
+          markers:true
+        }
+      })
+      heroTl.to(".hero-container",{
+        rotate:7,
+        scale:0.9,
+        yPercent:30,
+        ease:"power1.inOut"
+      })
   });
-  const tl=gsap.timeline({
-    delay:1,
-  })
-  tl.to(".hero-content",{
-    opacity:1,
-    y:0,
-    easel:"power1.inOut"
-  })
-  tl.from(titleSplit.chars, {
-  opacity: 0,
-  y: 50,
-  stagger: 0.05,
-  ease: "power2.out",
-});
-})
-  
+
   return (
     <section className="relative bg-main-bg h-[100vh] m overflow-hidden">
       <div className="hero-container relative w-full h-full flex items-center justify-center">
@@ -40,16 +69,20 @@ useGSAP(()=>{
               Wings On Demand
             </h1>
           </div>
-          <div className="hero-text-scroll"
-            style={{clipPath:"polygon(50% 0%, 50% 0, 50% 100%, 50% 100%)"}}
+
+          <div
+            className="hero-text-scroll"
+            style={{ clipPath: "polygon(50% 0%, 50% 0, 50% 100%, 50% 100%)" }}
           >
-            <div className="p-4">
+            <div className="">
               <h1>Focus + Fury</h1>
             </div>
           </div>
           <div className="pt-10">
-
-            <h2 className="text-xl text-white font-bold ">Whether you're flying through the skies or grinding through deadlines—Red Bull gives you wings.</h2>
+            <h2 className="text-xl text-white font-bold ">
+              Whether you're flying through the skies or grinding through
+              deadlines—Red Bull gives you wings.
+            </h2>
             <div className="hero-button mt-5 h-[60px] text-2xl font-bold ">
               <p className=""> Get Your Wings </p>
             </div>
