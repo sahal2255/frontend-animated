@@ -44,7 +44,7 @@ const MessageSection = () => {
     thirdMsgTl.from(thirdMsgSplit.words,{
       xPercent:(i,target)=>(i%2===0 ? -100:100),
       opacity:0,
-      stagger:0.1,
+      stagger:1,
       ease:"power2.out",
       color:"#FFD300",
       scrollTrigger:{
