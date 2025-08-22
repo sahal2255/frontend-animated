@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@600&display=swap');
 
 main{
-    background-color: rgb(84, 121, 240);
+    background-color: rgb(29, 54, 137);
     color: #fefefe;
 }
 
@@ -45,7 +45,7 @@ main{
   justify-content: center;
 }
 .message-content {
-  background: linear-gradient(180deg, #1b358b 0%, #0a1a4f 100%);
+  background: linear-gradient(180deg, #1b358b 0%, #1b358b 100%);
 }
 
 .msg-part-1 h1 {
@@ -60,3 +60,6 @@ main{
   text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
 }
 
+.flavour-section{
+  height: 100vh;
+}
