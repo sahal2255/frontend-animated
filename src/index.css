@@ -63,3 +63,16 @@ main{
 .flavour-section{
   height: 100vh;
 }
+/* App.css */
+.sporty-text {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  transform: skewX(-15deg);
+  background: linear-gradient(45deg, #ff0077, #ffd500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback */
+  font-size: 3rem;
+}
