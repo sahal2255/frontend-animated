@@ -15,6 +15,16 @@ const FlavourTitle = () => {
         markers:true
       },
     });
+
+    const mainTl=gsap.timeline({
+      delay:1,
+      scrollTrigger:{
+        trigger:'flavour-title',
+        start:"top 50%",
+        
+      }
+
+    })
     tl.to(".flavour-highlited", {
       opacity: 1,
       duration: 0.8,
@@ -34,9 +44,11 @@ const FlavourTitle = () => {
       { opacity: 1, scale: 1, y: 0, duration: 1, ease: "back.out(1.7)" },
       "-=0.3"
     );
+
+    
   });
   return (
-    <div className=" space-y-6 general-title col-center h-full 2xl:gap-32 xl:gap-24 text-center">
+    <div className="flavour-title space-y-6 general-title col-center h-full 2xl:gap-32 xl:gap-24 text-center">
       <div className="overflow-hidden py-3">
         <h1 className="sporty-text text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
           Choose Your
