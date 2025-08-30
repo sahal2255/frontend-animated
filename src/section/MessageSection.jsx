@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+// import { SplitText } from "gsap/all";
+import SplitText from "gsap/SplitText";
 import gsap from "gsap";
 import React from "react";
 

@@ -1,61 +1,65 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText, ScrollTrigger } from "gsap/all";
-
+import {  ScrollTrigger } from "gsap/all";
+import SplitText from "gsap/SplitText";
+// import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText)
 
 const FlavourTitle = () => {
+  // const containerRef=useRef()
   useGSAP(() => {
-    const tl = gsap.timeline({
-      delay: 1,
-      scrollTrigger: {
-        trigger: ".flavour-section", 
-        start: "top 50%", 
-        toggleActions: "play none none reverse",
-        markers:true
-      },
+    
+    const firstTextSplit = SplitText.create(".first-text-split", {
+      type: "chars",
     });
-
-    const mainTl=gsap.timeline({
-      delay:1,
-      scrollTrigger:{
-        trigger:'flavour-title',
-        start:"top 50%",
-        
-      }
-
+    const secondTextSplit=SplitText.create('.second-text-split',{
+      type:"chars",
     })
-    tl.to(".flavour-highlited", {
-      opacity: 1,
-      duration: 0.8,
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      ease: "power2.inOut",
-    }).to(
-      ".flavour-title",
-      {
-        duration: 1,
-        ease: "circ.out",
-      },
-      "-=0.3"
-    )
-    .fromTo(
-      ".flavour-text",   
-      { opacity: 0, scale: 0.8, y: 100 },
-      { opacity: 1, scale: 1, y: 0, duration: 1, ease: "back.out(1.7)" },
-      "-=0.3"
-    );
+    gsap.set(firstTextSplit.chars, { yPercent: 200, opacity: 0 });
+  gsap.set(secondTextSplit.chars, { yPercent: 200, opacity: 0 });
+    gsap.to(firstTextSplit.chars, {
+      yPercent: 0,
+      opacity:1,
+      stagger:0.02,
+      ease:"power1.inOut",
+      scrollTrigger:{
+        trigger:".flavour-section",
+        start:"top 30%",
+        markers:true,
+      }
+    })
+    gsap.to(".flavour-highlited",{
+      duration:1,
+      clipPath:"polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      scrollTrigger:{
+        trigger:".flavour-section",
+        start:"top 20%",
+      }
+    })
+    gsap.to(secondTextSplit.chars,{
+      yPercent:0,
+      opacity:1,
+      stagger:0.02,
+      ease:"power1.inOut",
+      scrollTrigger:{
+        trigger:'.flavour-section',
+        start:'top 30%',
+        markers:true
 
+      }
+    })
     
   });
   return (
-    <div className="flavour-title space-y-6 general-title col-center h-full 2xl:gap-32 xl:gap-24 text-center">
+    <div  className=" flavour-title space-y-6 general-title col-center h-full 2xl:gap-32 xl:gap-24 text-center">
       <div className="overflow-hidden py-3">
-        <h1 className="sporty-text text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
+        <h1 className="first-text-split  text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
           Choose Your
         </h1>
       </div>
 
-      <div
+      <div 
         className="relative inline-block flavour-highlited"
         style={{ clipPath: "polygon(50% 0%, 50% 0, 50% 100%, 50% 100%)" }}
       >
@@ -65,7 +69,7 @@ const FlavourTitle = () => {
       </div>
 
       <div>
-        <h1 className="sporty-text text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
+        <h1 className="second-text-split  text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
           Fuel the Rush.
         </h1>
       </div>
