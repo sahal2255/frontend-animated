@@ -14,7 +14,7 @@ const App = () => {
       <HeroSection />
       <MessageSection />
       <FlavourSection />
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       {/* <div className='h-dvh border-red-400 border-2'>
 
       </div> */}

@@ -1,5 +1,4 @@
 // FlavourSection.jsx
-import React from 'react'
 import FlavourTitle from '../component/FlavourTitle'
 import FlavourSlider from '../component/FlavourSlider'
 
@@ -15,9 +14,9 @@ const FlavourSection = () => {
         </div>
 
         {/* Slider below */}
-        {/* <div className="w-full max-w-4xl">
+        <div className="w-full ">
           <FlavourSlider />
-        </div> */}
+        </div>
       </div>
     </section>
   )
