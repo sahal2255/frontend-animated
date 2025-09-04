@@ -26,7 +26,7 @@ const FlavourTitle = () => {
       scrollTrigger:{
         trigger:".flavour-section",
         start:"top 30%",
-        markers:true,
+        // markers:true,
       }
     })
     gsap.to(".flavour-highlited",{
@@ -45,7 +45,7 @@ const FlavourTitle = () => {
       scrollTrigger:{
         trigger:'.flavour-section',
         start:'top 30%',
-        markers:true
+        // markers:true
 
       }
     })

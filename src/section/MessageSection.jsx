@@ -26,7 +26,7 @@ const MessageSection = () => {
         start: "top center",
         scrub: true,
         end: "30% center",
-        markers: true,
+        // markers: true,
       },
     });
     gsap.to(secondMsgSplit.words, {
