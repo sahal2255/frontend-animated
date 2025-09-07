@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@600&display=swap');
 
-main{
+/* main{
     background-color: rgb(29, 54, 137);
     color: #fefefe;
-}
+} */
 
 .hero-heading {
  
@@ -45,7 +45,8 @@ main{
   justify-content: center;
 }
 .message-content {
-  background: linear-gradient(180deg, #1b358b 0%, #1b358b 100%);
+/* background: linear-gradient(45deg, #001122 0%, #003366 30%, #0066CC 70%, #33AAFF 100%); */
+
 }
 
 .msg-part-1 h1 {

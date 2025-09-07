@@ -10,7 +10,7 @@ const FlavourSlider = () => {
   useGSAP(() => {
     // Calculate total width to scroll
     const totalCards = redBullFlavorEditions.length;
-    const cardWidth = 400; // Fixed width per card
+    const cardWidth = 400;
     const totalWidth = (totalCards - 1) * cardWidth;
 
     // Horizontal scroll animation
@@ -19,7 +19,7 @@ const FlavourSlider = () => {
       ease: "none",
       scrollTrigger: {
         trigger: ".flavour-section",
-        start: "top -25%",
+        start: "top -30%",
         end: () => `+=${totalWidth}`,
         scrub: 1,
         pin: true,
@@ -56,9 +56,9 @@ const FlavourSlider = () => {
         {redBullFlavorEditions.map((flavour, index) => (
           <div
             key={flavour.name}
-            className="flavour-card flex-none w-[350px] h-[80vh] mx-4 relative rounded-lg overflow-hidden shadow-xl"
+            className="flavour-card flex-none w-[550px] h-[80vh] mx-4 relative rounded-lg overflow-hidden shadow-xl"
             style={{ 
-              transform: `rotate(${flavour.rotation || 0}deg)`,
+              transform: `rotate(${flavour.rotation || '0deg'})`,
               transformOrigin: 'center center'
             }}
           >
@@ -86,10 +86,6 @@ const FlavourSlider = () => {
               </p> */}
             </div>
 
-            {/* Card number indicator */}
-            {/* <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center z-20">
-              <span className="text-white font-bold text-sm">{index + 1}</span>
-            </div> */}
           </div>
         ))}
       </div>

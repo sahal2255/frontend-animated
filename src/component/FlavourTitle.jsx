@@ -54,7 +54,7 @@ const FlavourTitle = () => {
   return (
     <div  className=" flavour-title space-y-6 general-title col-center h-full 2xl:gap-32 xl:gap-24 text-center">
       <div className="overflow-hidden py-3">
-        <h1 className="first-text-split  text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
+        <h1 className="first-text-split  text-4xl md:text-5xl font-extrabold uppercase tracking-tight drop-shadow-2xl">
           Choose Your
         </h1>
       </div>
@@ -69,7 +69,7 @@ const FlavourTitle = () => {
       </div>
 
       <div>
-        <h1 className="second-text-split  text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
+        <h1 className="second-text-split  text-4xl md:text-5xl font-extrabold uppercase tracking-tight drop-shadow-2xl">
           Fuel the Rush.
         </h1>
       </div>
