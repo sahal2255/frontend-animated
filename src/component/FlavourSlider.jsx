@@ -24,7 +24,9 @@ const FlavourSlider = () => {
         scrub: 1,
         pin: true,
         anticipatePin: 1,
-        markers: false
+        markers: false,
+        
+
       }
     });
 

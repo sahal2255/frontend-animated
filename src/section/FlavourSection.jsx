@@ -15,6 +15,7 @@ const FlavourSection = () => {
       <div className="pt-64"> {/* Offset for title */}
         <FlavourSlider />
       </div>
+      {/* <div className="h-[100vh]"></div> */}
     </section>
   )
 }
